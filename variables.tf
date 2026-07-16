@@ -50,13 +50,13 @@ variable "Eth2SubnetId" {
 }
 
 variable "ImageSku" {
-	default = "keysight-ixnetwork-cloud-test-appliance-26-0-0"
+	default = "keysight-ixnetwork-cloud-test-appliance-26-3-0"
 	description = "An instance of an offer, such as a major release of a distribution."
 	type = string
 }
 
 variable "ImageVersion" {
-	default = "26.0.317"
+	default = "26.3.9"
 	description = "The version number of an image SKU."
 	type = string
 }
@@ -128,7 +128,7 @@ variable "UserProjectTag" {
 }
 
 variable "Version" {
-	default = "26.0.0"
+	default = "26.3.0"
 	description = "Versioning of the application using the deployment"
 	type = string
 }
