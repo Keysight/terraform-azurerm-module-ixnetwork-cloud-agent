@@ -32,6 +32,7 @@ resource "azurerm_linux_virtual_machine" "Instance" {
 		username = local.AdminUserName
 		public_key = data.azurerm_ssh_public_key.SshKey.public_key
 	}
+	custom_data = base64encode(local.init_cli)
 	network_interface_ids = [
 		azurerm_network_interface.Eth0.id,
 		azurerm_network_interface.Eth1.id
@@ -183,4 +184,11 @@ resource "azurerm_public_ip" "Eth0PublicIpAddress" {
 	allocation_method = "Static"
 	idle_timeout_in_minutes = 4
 	domain_name_label = local.DnsLabel
+}
+
+resource "time_sleep" "SleepDelay" {
+	create_duration = local.SleepDelay
+	depends_on = [
+		azurerm_linux_virtual_machine.Instance
+	]
 }

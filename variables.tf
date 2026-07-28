@@ -84,6 +84,12 @@ variable "SshKeyName" {
 	type = string
 }
 
+variable "SleepDelay" {
+	default = "1m"
+	description = "Time duration to delay to allow application to perform internal initialization required before use"
+	type = string
+}
+
 variable "Tag" {
 	default = "ixnetwork"
 	description = "App ID tag of application using the deployment"
@@ -133,4 +139,12 @@ VmSize must be one of the following sizes:
 	Standard_F4s_v2, Standard_F8s_v2, Standard_F16s_v2
 		EOF
 	}
+}
+
+variable "init_cli" {
+	default = <<-EOF
+#!/bin/bash -xe
+uname -a
+    EOF
+	type = string
 }

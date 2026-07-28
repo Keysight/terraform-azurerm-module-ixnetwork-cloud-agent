@@ -22,6 +22,7 @@ locals {
 	Preamble = "${local.UserLoginTag}-${local.UserProjectTag}-${local.Tag}-${local.Version}-${local.InstanceId}"
 	ResourceGroupLocation = var.ResourceGroupLocation
 	ResourceGroupName = var.ResourceGroupName
+	SleepDelay = var.SleepDelay
 	SshKeyName = var.SshKeyName
 	Tag = var.Tag
 	UserEmailTag = var.UserEmailTag
@@ -29,4 +30,5 @@ locals {
 	UserProjectTag = var.UserProjectTag
 	Version = var.Version
 	VmSize = var.VmSize
+	init_cli = var.init_cli
 }
