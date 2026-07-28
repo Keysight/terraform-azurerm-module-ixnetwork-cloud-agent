@@ -12,7 +12,7 @@ module "Agent" {
 	source  = "git::https://github.com/Keysight/terraform-azurerm-module-ixnetwork-cloud-agent.git"
 	Eth0SubnetId = module.Vnet.PublicSubnet.id
 	Eth1SubnetId = module.Vnet.Private1Subnet.id
-	Eth1SubnetId = module.Vnet.Private2Subnet.id
+	Eth2SubnetId = module.Vnet.Private2Subnet.id
 	ResourceGroupName = azurerm_resource_group.ResourceGroup.name
 	SshKeyName = azurerm_ssh_public_key.SshKey.name
 }

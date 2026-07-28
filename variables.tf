@@ -90,14 +90,14 @@ variable "ResourceGroupName" {
 	type = string
 }
 
-variable "SshKeyName" {
-	description = "Id associated with SSH key pair used for authentication"
-	type = string
-}
-
 variable "SleepDelay" {
 	default = "1m"
 	description = "Time duration to delay to allow application to perform internal initialization required before use"
+	type = string
+}
+
+variable "SshKeyName" {
+	description = "Id associated with SSH key pair used for authentication"
 	type = string
 }
 
